@@ -12,7 +12,7 @@
 const CONFIG = {
   // Siparişin SMS ile gideceği numara. Ülke kodu ile, başında + olabilir.
   // The order is sent here as a text message. Include the country code.
-  phone: "+99362998301",
+  phone: "+99364629645",
 
   brand: "Turkana-Restoran Nebitdag", // üst barda görünen isim / name in the header
   currency: "m", // para birimi / currency symbol
