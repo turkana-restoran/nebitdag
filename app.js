@@ -956,16 +956,67 @@ renderAll();
 syncHeaderHeight();
 parallax(window.scrollY);
 
-// Menüyü bekletmesin diye ağ isteği en sona bırakıldı.
-// Fired last so the network request never holds up the menu.
-countVisit();
+/* ------------------------------------------------------- aşamalı açılış */
+// Her şey çizili ama gizli. Sırayla açıyoruz: yükleyici → logo inince başlık
+// → banner → menü → alt kısım. Böylece bağlantıya tıklayan önce yükleyiciyi
+// görür, sonra sayfa parça parça yerine oturur.
+// Everything is drawn but hidden. We uncover it in order: loader → header
+// once the logo has arrived → banner → menu → the rest. So whoever opens the
+// link meets the loader first and then watches the page settle in pieces.
+const wait = (ms) => new Promise((done) => setTimeout(done, ms));
 
-// Menü çizildi; açılış ekranını kaldır. / Menu is on screen, drop the boot screen.
-requestAnimationFrame(() => {
+// Logo inene kadar bekler; hata verirse ya da çok gecikirse yine devam eder.
+// Waits for the logo, but never blocks: a failed or slow image resolves too.
+const settled = (src) =>
+  new Promise((done) => {
+    if (!src) return done();
+    const img = new Image();
+    img.onload = img.onerror = done;
+    img.src = src;
+    if (img.complete) done();
+  });
+
+const show = (stage) =>
+  document
+    .querySelectorAll(`[data-reveal="${stage}"]`)
+    .forEach((el) => el.classList.add("shown"));
+
+// Emniyet ağı: açılış zinciri bir yerde takılırsa sayfa gizli kalmasın.
+// Safety net: if the reveal chain ever stalls, the page must not stay hidden.
+const failsafe = setTimeout(() => {
+  els.html.classList.add("ready");
+  document.getElementById("boot")?.remove();
+  ["head", "banner", "menu", "rest"].forEach(show);
+}, 6000);
+
+async function revealPage() {
+  // Başlık logosuz görünmesin diye resmi bekliyoruz; ağ takılırsa 2.5 sn
+  // sonra yine açıyoruz ki yükleyici sonsuza kadar kalmasın.
+  // Hold the header until its logo is in, so it never flashes in empty. If the
+  // network stalls we open anyway at 2.5s rather than trap people on the loader.
+  await Promise.race([settled(CONFIG.logo), wait(2500)]);
+
+  // Yükleyici çıkıyor / the loader steps aside.
   els.html.classList.add("ready");
   const boot = document.getElementById("boot");
   boot?.addEventListener("transitionend", () => boot.remove(), {
     once: true,
   });
   setTimeout(() => boot?.remove(), 600);
-});
+
+  show("head");
+  await wait(260);
+  show("banner");
+  await wait(200);
+  show("menu");
+  await wait(180);
+  show("rest");
+
+  clearTimeout(failsafe);
+
+  // Menü ekranda; sayaç isteği en sona kalsın.
+  // The menu is up, so the counter request goes last.
+  countVisit();
+}
+
+revealPage();

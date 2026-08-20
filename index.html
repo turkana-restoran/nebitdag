@@ -51,6 +51,10 @@
       // uygulama betiğiyle çakışır. / Must stay an IIFE: globals declared here
       // would collide with the app script below.
       (function () {
+        // Aşamalı açılış işareti. JS çalışmazsa bu sınıf hiç eklenmez ve
+        // içerik gizlenmeden görünür. / Marks staged boot: with JS off the
+        // class never lands and nothing is ever hidden.
+        document.documentElement.classList.add("staged");
         try {
           var saved = localStorage.getItem("sm.market.theme");
           document.documentElement.dataset.theme = saved
@@ -142,11 +146,13 @@
       <div class="bar" aria-hidden="true"></div>
     </div>
 
-    <header class="topbar">
+    <header class="topbar" data-reveal="head">
       <div class="topbar-row">
         <div class="brand">
           <div class="brand-text">
-            <div class="brand-name" id="brandName">Turkana Restoran Nebitdag</div>
+            <div class="brand-name" id="brandName">
+              Turkana Restoran Nebitdag
+            </div>
             <div class="brand-sub" data-i18n="tagline"></div>
           </div>
         </div>
@@ -203,7 +209,7 @@
     </header>
 
     <!-- Parallax hero: logo + welcome drift down as you scroll, plates trail behind -->
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" data-reveal="head">
       <div class="hero-decor" id="heroDecor">
         <img class="left" id="heroLeft" src="" alt="" />
         <img class="right" id="heroRight" src="" alt="" />
@@ -215,24 +221,24 @@
     </section>
 
     <!-- Auto-scrolling, swipeable banner -->
-    <div class="banner-wrap" id="bannerWrap">
+    <div class="banner-wrap" id="bannerWrap" data-reveal="banner">
       <div class="banner">
         <div class="banner-track" id="bannerTrack"></div>
         <div class="dots" id="bannerDots"></div>
       </div>
     </div>
 
-    <nav class="catrail" aria-label="Categories">
+    <nav class="catrail" aria-label="Categories" data-reveal="menu">
       <div class="catrail-inner" id="catrail"></div>
     </nav>
 
-    <main id="content"></main>
+    <main id="content" data-reveal="menu"></main>
 
     <!-- Sayfa altı. Ziyaretçi sayacı sunucusuz çalışır: sayı ücretsiz bir
          sayaç servisinden gelir, gelmezse satır kendini gizler.
          Page footer. The visit counter needs no backend: the number comes from
          a free counter service, and the row hides itself if that call fails. -->
-    <footer class="sitefoot">
+    <footer class="sitefoot" data-reveal="rest">
       <div class="foot-brand" id="footBrand">Turkana Restoran Nebitdag</div>
       <div class="visits" id="visits" hidden>
         <span class="visits-eye" aria-hidden="true">👁</span>
@@ -242,7 +248,7 @@
 
     <!-- Sağ altta duran sepet yuvarlağı: halka, altında etiket.
          The cart circle sitting bottom-right: a ring with its caption below. -->
-    <button class="fab" id="fab" type="button" aria-label="Cart">
+    <button class="fab" id="fab" type="button" aria-label="Cart" data-reveal="rest">
       <span class="fab-ring">
         <svg
           width="25"

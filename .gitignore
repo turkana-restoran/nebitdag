@@ -8,4 +8,9 @@
 # açık bir GitHub Pages sitesi, yani buraya asla girmemeli.
 # Holds the admin password hash and the tablet/waiter PINs. This repo is a
 # public GitHub Pages site, so it must never be committed.
-turkana-restoran-backup-*/
+# Not: kalıp klasör adının ortasındaki şube adını da yakalamalı
+# (turkana-restoran-nebitdag-backup-... gibi).
+# Note: the pattern has to catch a branch name in the middle too
+# (e.g. turkana-restoran-nebitdag-backup-...).
+turkana-restoran-*backup-*/
+*-backup-*/

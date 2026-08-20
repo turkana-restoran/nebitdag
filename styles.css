@@ -1607,6 +1607,40 @@ html[data-theme="dark"] .pop-img::before {
   }
 }
 
+/* ------------------------------------------------------- aşamalı açılış
+   Sayfa tek seferde değil, sırayla belirir: önce yükleyici, logo inince
+   başlık, sonra banner, sonra menü. Gizleme yalnız html.staged varken
+   uygulanır — o sınıfı boot betiği koyar, yani JS kapalıysa hiçbir şey
+   gizli kalmaz.
+   Staged reveal. The page arrives in order instead of all at once: loader
+   first, then the header once the logo has downloaded, then the banner, then
+   the menu. The hidden state applies only under html.staged, which the boot
+   script sets, so nothing stays invisible when JS is off. */
+html.staged [data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+html.staged [data-reveal].shown {
+  opacity: 1;
+  transform: none;
+}
+/* Sepet yuvarlağı aşağıdan gelsin / the cart circle rises into place. */
+html.staged .fab[data-reveal] {
+  transform: translateY(24px) scale(0.9);
+}
+html.staged .fab[data-reveal].shown {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.staged [data-reveal],
+  html.staged .fab[data-reveal] {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

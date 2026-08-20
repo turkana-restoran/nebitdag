@@ -12,7 +12,7 @@
 const CONFIG = {
   // Siparişin SMS ile gideceği numara. Ülke kodu ile, başında + olabilir.
   // The order is sent here as a text message. Include the country code.
-  phone: "+99364629645",
+  phone: "+99371861323",
 
   brand: "Turkana-Restoran Nebitdag", // üst barda görünen isim / name in the header
   currency: "m", // para birimi / currency symbol
@@ -144,512 +144,146 @@ const T = {
 /* ==========================================================================
    4. MENU — kategoriler ve ürünler / categories and products
 Resimler "uploads/" klasöründen gelir. Images are served from uploads/.
+
+   Kaynak / source: turkana-restoran-nebitdag-backup-2026-08-20
+   (SmartSacak yedeği, 13 kategori / 174 ürün).
    ========================================================================== */
 const MENU = [
   {
     id: "breakfast",
     name: {
-      tk: "Ertirlikler",
+      tk: "Ertklikler",
       ru: "Завтраки",
     },
-    image: "breakfast-ertirlik1.webp",
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p6845",
+        id: "p2",
         name: {
-          tk: "Türk ertirligi",
-          ru: "Турецкий завтрак",
+          tk: "Mix Tost",
+          ru: "Мих тост",
         },
-        price: 80,
-        image: "1785481404547-493407356-sm.webp",
+        price: 30,
+        image: "1786841076864-905625444.webp",
       },
       {
-        id: "p6846",
+        id: "p3",
         name: {
-          tk: "Peýnirli we kömelekli ýumurtga",
-          ru: "Яичница с сыром и грибами",
+          tk: "Sada Omlet",
+          ru: "Омлет",
+        },
+        price: 25,
+        image: "1786696685771-218194172.webp",
+      },
+      {
+        id: "p4",
+        name: {
+          tk: "İspanyol Omlet",
+          ru: "Омлет \"Испанский\"",
+        },
+        price: 25,
+        image: "1786696685771-218194172.webp",
+      },
+      {
+        id: "p5",
+        name: {
+          tk: "Sigara Börek (10 şt)",
+          ru: "Сигаретки (10 штук)",
         },
         price: 35,
-        image: "1785481412887-221794588-sm.webp",
+        image: "1786696854899-989766841.webp",
       },
       {
-        id: "p6847",
+        id: "p6",
         name: {
-          tk: "Gowurdakly ýumurtga",
-          ru: "Яичница с говурдаком",
+          tk: "Göz Yumurtğa",
+          ru: "Яичница-глазунья",
         },
-        price: 40,
-        image: "1785481420893-314687771-sm.webp",
+        price: 20,
+        image: "1786696536090-330041972.webp",
       },
       {
-        id: "p6848",
+        id: "p7",
+        name: {
+          tk: "Peynirli Yumurtğa",
+          ru: "Яичница с сыром",
+        },
+        price: 30,
+        image: "1786696676959-758029928.webp",
+      },
+      {
+        id: "p8",
+        name: {
+          tk: "Syrly Pomidorly Omlet",
+          ru: "Омлет с сыром и помидорами",
+        },
+        price: 35,
+        image: "1786841102479-895726992.webp",
+      },
+      {
+        id: "p9",
+        name: {
+          tk: "Farsly Yumurtğa",
+          ru: "Яичница с фаршем",
+        },
+        price: 35,
+        image: "1786696696861-55590998.webp",
+      },
+      {
+        id: "p10",
+        name: {
+          tk: "Club Sendwiç",
+          ru: "Club сэндвич",
+        },
+        price: 35,
+        image: "1786841140810-873825082.webp",
+      },
+      {
+        id: "p11",
+        name: {
+          tk: "Syrly Tost",
+          ru: "Тост с сыром",
+        },
+        price: 25,
+        image: "1786841152373-374355477.webp",
+      },
+      {
+        id: "p12",
+        name: {
+          tk: "Sujukly Yumurtğa",
+          ru: "Яичница с колбасой",
+        },
+        price: 35,
+        image: "1786841164091-183247753.webp",
+      },
+      {
+        id: "p13",
         name: {
           tk: "Menemen",
           ru: "Менемен",
         },
-        price: 30,
-        image: "1785481429437-881160463-sm.webp",
-      },
-      {
-        id: "p6849",
-        name: {
-          tk: "Meksikan omleti",
-          ru: "Омлет по-мексикански",
-        },
-        price: 30,
-        image: "1785482552688-786096037-sm.webp",
-      },
-      {
-        id: "p6850",
-        name: {
-          tk: "Kolbasaly omlet",
-          ru: "Омлет с колбасой",
-        },
-        price: 35,
-        image: "1785482562076-127875839-sm.webp",
-      },
-      {
-        id: "p6851",
-        name: {
-          tk: "Kömelekli omlet",
-          ru: "Омлет с грибами",
-        },
-        price: 35,
-        image: "1785482571449-604486077-sm.webp",
-      },
-      {
-        id: "p6852",
-        name: {
-          tk: "Brusketta",
-          ru: "Брускетты",
-        },
-        price: 55,
-        image: "1785482578348-943057132-sm.webp",
-      },
-      {
-        id: "p6853",
-        name: {
-          tk: "Tost",
-          ru: "Тост",
-        },
         price: 25,
-        image: "1785482584674-642842869-sm.webp",
+        image: "1786696619269-164562947.webp",
       },
       {
-        id: "p6854",
+        id: "p14",
         name: {
-          tk: "Uly sendwiç",
-          ru: "Биг сэндвич",
+          tk: "Syrly Omlet",
+          ru: "Омлет с сыром",
+        },
+        price: 35,
+        image: "1786841312500-166220051.webp",
+      },
+      {
+        id: "p15",
+        name: {
+          tk: "Şa Ertirligi",
+          ru: "Şa завтрак",
         },
         price: 55,
-        image: "1785482596412-859097634-sm.webp",
-      },
-      {
-        id: "p6855",
-        name: {
-          tk: "Wetçinaly sendwiç",
-          ru: "Сэндвич с ветчиной",
-        },
-        price: 50,
-        image: "1785482623140-663715073-sm.webp",
-      },
-      {
-        id: "p6856",
-        name: {
-          tk: "Klub sendwiç",
-          ru: "Клаб сэндвич",
-        },
-        price: 50,
-        image: "1785482631053-881963506-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "fast-food",
-    name: {
-      tk: "Fast Fud",
-      ru: "Фаст фуд",
-    },
-    image: "burger-burger1.webp",
-    items: [
-      {
-        id: "p6857",
-        name: {
-          tk: "Çörekli döner",
-          ru: "Донер с хлебом",
-        },
-        price: 55,
-        image: "doner-doner1.webp",
-      },
-      {
-        id: "p6858",
-        name: {
-          tk: "Lawaşly döner",
-          ru: "Донер с лавашом",
-        },
-        price: 55,
-        image: "doner-doner2.webp",
-      },
-      {
-        id: "p6859",
-        name: {
-          tk: "Burger",
-          ru: "Бургер",
-        },
-        price: 60,
-        image: "burger-burger1.webp",
-      },
-      {
-        id: "p6860",
-        name: {
-          tk: "Towuk burger",
-          ru: "Чикен бургер",
-        },
-        price: 60,
-        image: "burger-burger2.webp",
-      },
-      {
-        id: "p6861",
-        name: {
-          tk: "Çizburger",
-          ru: "Чизбургер",
-        },
-        price: 70,
-        image: "hamburger-ciz-burger.webp",
-      },
-      {
-        id: "p6862",
-        name: {
-          tk: "Goşa burger",
-          ru: "Дабл бургер",
-        },
-        price: 80,
-        image: "burger-burger3.webp",
-      },
-      {
-        id: "p6863",
-        name: {
-          tk: "Şef burger",
-          ru: "Шеф бургер",
-        },
-        price: 90,
-        image: "hamburger-asado-burger.webp",
-      },
-      {
-        id: "p6864",
-        name: {
-          tk: "KFS towuk",
-          ru: "КФС",
-        },
-        price: 80,
-        image: "nagetsy-nagetsy1.webp",
-      },
-    ],
-  },
-  {
-    id: "salads",
-    name: {
-      tk: "Salatlar",
-      ru: "Салаты",
-    },
-    items: [
-      {
-        id: "p6865",
-        name: {
-          tk: "Mylaýym sygyr etli salat",
-          ru: "Тёплый салат с говядиной",
-        },
-        price: 70,
-        image: "1785482644107-864778979-sm.webp",
-      },
-      {
-        id: "p6869",
-        name: {
-          tk: "Kurbaş salady",
-          ru: "Салат Курбас",
-        },
-        price: 70,
-        image: "1785482883576-531647019-sm.webp",
-      },
-      {
-        id: "p6870",
-        name: {
-          tk: "Şuba astyndaky seld",
-          ru: "Селёдка под шубой",
-        },
-        price: 70,
-        image: "1785482908919-202017366-sm.webp",
-      },
-      {
-        id: "p6871",
-        name: {
-          tk: "Krab salady",
-          ru: "Крабовый салат",
-        },
-        price: 70,
-        image: "1785482919839-88643602-sm.webp",
-      },
-      {
-        id: "p6872",
-        name: {
-          tk: "Badamjan salady",
-          ru: "Баклажановый салат",
-        },
-        price: 50,
-        image: "1785482929362-320042215-sm.webp",
-      },
-      {
-        id: "p6873",
-        name: {
-          tk: "Grek salady",
-          ru: "Греческий салат",
-        },
-        price: 50,
-        image: "1785482946711-991098136-sm.webp",
-      },
-      {
-        id: "p6874",
-        name: {
-          tk: "Taý salady",
-          ru: "Тайский салат",
-        },
-        price: 70,
-        image: "1785482957093-280798959-sm.webp",
-      },
-      {
-        id: "p6875",
-        name: {
-          tk: "Türk salady",
-          ru: "Турецкий салат",
-        },
-        price: 70,
-        image: "1785482966294-135213833-sm.webp",
-      },
-      {
-        id: "p6876",
-        name: {
-          tk: "Italýan salady",
-          ru: "Итальянский салат",
-        },
-        price: 65,
-        image: "1785482973684-934463402-sm.webp",
-      },
-      {
-        id: "p6877",
-        name: {
-          tk: "Olihwe salady",
-          ru: "Оливье",
-        },
-        price: 50,
-        image: "1785482985316-905408395-sm.webp",
-      },
-      {
-        id: "p6878",
-        name: {
-          tk: "Erkek islegi salady",
-          ru: "Мужской каприз",
-        },
-        price: 70,
-        image: "1785482993603-676389521-sm.webp",
-      },
-      {
-        id: "p6879",
-        name: {
-          tk: "Dostlar üçin salat",
-          ru: "Для друзей",
-        },
-        price: 70,
-        image: "1785483003888-228827647-sm.webp",
-      },
-      {
-        id: "p6881",
-        name: {
-          tk: "Süýjüjik salat",
-          ru: "Вкусняшка",
-        },
-        price: 70,
-        image: "1785483023549-68109335-sm.webp",
-      },
-      {
-        id: "p6882",
-        name: {
-          tk: "Tüsseli salat",
-          ru: "Дымок",
-        },
-        price: 50,
-        image: "1785483031968-681924928-sm.webp",
-      },
-      {
-        id: "p6883",
-        name: {
-          tk: "Sarymsakly süzme",
-          ru: "Сюзьма с чесноком",
-        },
-        price: 30,
-        image: "1785483042169-523740168-sm.webp",
-      },
-      {
-        id: "p6884",
-        name: {
-          tk: "Täze salat",
-          ru: "Свежий салат",
-        },
-        price: 50,
-        image: "1785483060161-310345586-sm.webp",
-      },
-      {
-        id: "p6885",
-        name: {
-          tk: "Çopan salady",
-          ru: "Чобан салат",
-        },
-        price: 50,
-        image: "1785483074738-31048329-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "dessert-salads-fruits",
-    name: {
-      tk: "Süýji salatlar we miweler",
-      ru: "Салаты-десерты и фрукты",
-    },
-    image: "ice-cream-disert-su.webp",
-    items: [
-      {
-        id: "p8825",
-        name: {
-          tk: "Miweli Sokolad",
-          ru: "Miweli Sokolad",
-        },
-        price: 90,
-        image: "1785483097581-791481606-sm.webp",
-      },
-      {
-        id: "p6888",
-        name: {
-          tk: "Miwe bagy",
-          ru: "Фруктовый сад",
-        },
-        price: 80,
-        image: "1785483105498-470071-sm.webp",
-      },
-      {
-        id: "p6889",
-        name: {
-          tk: "Miwe perisi",
-          ru: "Фруктовая фея",
-        },
-        price: 90,
-        image: "1785483113201-874442021-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "cold-appetizers",
-    name: {
-      tk: "Sowuk işdäaçarlar",
-      ru: "Холодные закуски",
-    },
-    items: [
-      {
-        id: "p6890",
-        name: {
-          tk: "Gök önüm assorti",
-          ru: "Овощное ассорти",
-        },
-        price: 60,
-        image: "1785483123335-421554619-sm.webp",
-      },
-      {
-        id: "p6891",
-        name: {
-          tk: "Duzly assorti",
-          ru: "Солёное ассорти",
-        },
-        price: 75,
-        image: "1785483137170-363655470-sm.webp",
-      },
-      {
-        id: "p6892",
-        name: {
-          tk: "Miwe assorti",
-          ru: "Фруктовое ассорти",
-        },
-        price: 180,
-        image: "1785483146826-218784485-sm.webp",
-      },
-      {
-        id: "p6893",
-        name: {
-          tk: "Et assorti",
-          ru: "Мясное ассорти",
-        },
-        price: 200,
-        image: "1785483154834-963239560-sm.webp",
-      },
-      {
-        id: "p6894",
-        name: {
-          tk: "Peýnir assorti",
-          ru: "Сырное ассорти",
-        },
-        price: 180,
-        image: "1785483167327-11586455-sm.webp",
-      },
-      {
-        id: "p6895",
-        name: {
-          tk: "Kaprese",
-          ru: "Капрезе",
-        },
-        price: 90,
-        image: "1785483179961-274071305-sm.webp",
-      },
-      {
-        id: "p6896",
-        name: {
-          tk: "Limon",
-          ru: "Лимон",
-        },
-        price: 30,
-        image: "1785483189285-654484970-sm.webp",
-      },
-      {
-        id: "p6897",
-        name: {
-          tk: "Limon / Ananas / Zeýtun",
-          ru: "Лимон / ананас / маслины",
-        },
-        price: 80,
-        image: "1785483200179-309808603-sm.webp",
-      },
-      {
-        id: "p6898",
-        name: {
-          tk: "Kartoşkaly seld",
-          ru: "Селёдка с картофелем",
-        },
-        price: 100,
-        image: "1785483275466-154953670-sm.webp",
-      },
-      {
-        id: "p6900",
-        name: {
-          tk: "Badamjan ruletjikleri",
-          ru: "Рулетики из баклажан",
-        },
-        price: 60,
-        image: "1785483242497-774941238-sm.webp",
-      },
-      {
-        id: "p6901",
-        name: {
-          tk: "Sarymsakly we gök otly süzme",
-          ru: "Сюзьма с чесноком и зеленью",
-        },
-        price: 50,
-        image: "1785483254394-337253503-sm.webp",
+        image: "1786696913426-527212455.webp",
       },
     ],
   },
@@ -659,1366 +293,1572 @@ const MENU = [
       tk: "Çorbalar",
       ru: "Супы",
     },
-    image: "soup-soup.webp",
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p6902",
+        id: "p16",
         name: {
-          tk: "Kömelek krem çorbasy",
-          ru: "Грибной крем-суп",
+          tk: "Paça",
+          ru: "Пача",
         },
-        price: 50,
-        image: "1785483289871-320161522-sm.webp",
+        price: 30,
+        image: "1786696999457-280388063.webp",
       },
       {
-        id: "p6903",
+        id: "p17",
         name: {
-          tk: "Towuk krem çorbasy",
-          ru: "Куриный крем-суп",
+          tk: "Yayla",
+          ru: "Яйла",
         },
-        price: 50,
-        image: "1785483300100-537956760-sm.webp",
+        price: 30,
+        image: "1786697011733-615461792.webp",
       },
       {
-        id: "p6904",
+        id: "p18",
         name: {
-          tk: "Merjimek çorbasy",
+          tk: "Merjimeki",
           ru: "Мерджимек",
         },
         price: 30,
-        image: "soup-merjimek.webp",
+        image: "1786697025107-390457656.webp",
       },
       {
-        id: "p6905",
+        id: "p19",
         name: {
-          tk: "Ezogelin çorbasy",
-          ru: "Эзогелин",
+          tk: "Ezogelin",
+          ru: "Езогелин",
+        },
+        price: 30,
+        image: "1786697142859-427536132.webp",
+      },
+      {
+        id: "p20",
+        name: {
+          tk: "Unaş",
+          ru: "Унаш",
         },
         price: 35,
-        image: "soup-ezogelin.webp",
+        image: "1786697048262-322742781.webp",
       },
       {
-        id: "p6907",
+        id: "p21",
         name: {
-          tk: "Mengen çorbasy",
-          ru: "Менген",
-        },
-        price: 50,
-        image: "1785483316105-899303834-sm.webp",
-      },
-      {
-        id: "p6908",
-        name: {
-          tk: "Pomidor çorbasy",
-          ru: "Томатный суп",
-        },
-        price: 35,
-        image: "soup-tomatny-corba.webp",
-      },
-      {
-        id: "p6910",
-        name: {
-          tk: "Ysmanak çorbasy",
-          ru: "Шпинатный суп",
-        },
-        price: 40,
-        image: "1785483340669-518843073-sm.webp",
-      },
-      {
-        id: "p6912",
-        name: {
-          tk: "Un aş",
-          ru: "Ун-аш",
-        },
-        price: 50,
-        image: "1785483355691-236726922-sm.webp",
-      },
-      {
-        id: "p6913",
-        name: {
-          tk: "Lagman",
-          ru: "Лагман",
-        },
-        price: 50,
-        image: "1785483369228-363579253-sm.webp",
-      },
-      {
-        id: "p6914",
-        name: {
-          tk: "Toý çorbasy",
-          ru: "Той чорба",
-        },
-        price: 50,
-        image: "1785483380860-21918100-sm.webp",
-      },
-      {
-        id: "p6915",
-        name: {
-          tk: "Çorbaly pelmeni",
+          tk: "Börek",
           ru: "Пельмени с бульоном",
         },
-        price: 45,
-        image: "1785483397254-424941798-sm.webp",
+        price: 35,
+        image: "1786696854899-989766841.webp",
       },
       {
-        id: "p6917",
+        id: "p22",
+        name: {
+          tk: "Dograma",
+          ru: "Дограма",
+        },
+        price: 30,
+        image: "1786697073954-20330550.webp",
+      },
+      {
+        id: "p23",
+        name: {
+          tk: "Teftel",
+          ru: "Тефтели",
+        },
+        price: 30,
+        image: "1786845021919-407711820.webp",
+      },
+      {
+        id: "p24",
+        name: {
+          tk: "Borş",
+          ru: "Борщ",
+        },
+        price: 30,
+        image: "1786841353168-243982093.webp",
+      },
+      {
+        id: "p25",
+        name: {
+          tk: "Jüyje Çorba",
+          ru: "Суп с цыпленком",
+        },
+        price: 45,
+        image: "1786841378795-74083103.webp",
+      },
+      {
+        id: "p26",
+        name: {
+          tk: "Towuk Çorba",
+          ru: "Куриный суп",
+        },
+        price: 30,
+        image: "1786841491480-190998239.webp",
+      },
+      {
+        id: "p27",
+        name: {
+          tk: "Kömelekli Kremly Çorba",
+          ru: "Сливочно-грибной суп",
+        },
+        price: 40,
+        image: "1786697096326-487965363.webp",
+      },
+    ],
+  },
+  {
+    id: "salads",
+    name: {
+      tk: "Salatlar",
+      ru: "Салаты",
+    },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
+    items: [
+      {
+        id: "p28",
+        name: {
+          tk: "Swežiý Assorti",
+          ru: "Свежее ассорти",
+        },
+        price: 35,
+        image: "1786841504501-786269938.webp",
+      },
+      {
+        id: "p29",
+        name: {
+          tk: "Çopan",
+          ru: "Чопан салат",
+        },
+        price: 35,
+        image: "1786697777511-308146307.webp",
+      },
+      {
+        id: "p30",
+        name: {
+          tk: "Greçeskiý",
+          ru: "Греческий",
+        },
+        price: 45,
+        image: "1786700262295-815781240.webp",
+      },
+      {
+        id: "p31",
         name: {
           tk: "Okroşka",
           ru: "Окрошка",
         },
         price: 35,
-        image: "1785483419244-140026721-sm.webp",
+        image: "1786700148177-645110513.webp",
       },
       {
-        id: "p6919",
+        id: "p32",
         name: {
-          tk: "Dogroma",
-          ru: "Дограма",
+          tk: "Jajik",
+          ru: "Джаджик",
         },
-        price: 50,
-        image: "1785483450346-650250666-sm.webp",
+        price: 35,
+        image: "1786841553708-498817440.webp",
       },
       {
-        id: "p6920",
+        id: "p33",
         name: {
-          tk: "Tefteli çorba",
-          ru: "Тефтельный суп",
+          tk: "Oliwýe",
+          ru: "Оливье",
+        },
+        price: 35,
+        image: "1786700241365-499781196.webp",
+      },
+      {
+        id: "p34",
+        name: {
+          tk: "Sezar klassik",
+          ru: "Цезарь классический",
+        },
+        price: 45,
+        image: "1786700316561-889886295.webp",
+      },
+      {
+        id: "p35",
+        name: {
+          tk: "Mimoza",
+          ru: "Мимоза",
+        },
+        price: 55,
+        image: "1786700327438-241770274.webp",
+      },
+      {
+        id: "p36",
+        name: {
+          tk: "Winegret",
+          ru: "Винегрет",
+        },
+        price: 45,
+        image: "1786700367732-992250843.webp",
+      },
+      {
+        id: "p37",
+        name: {
+          tk: "Möwsüm",
+          ru: "Сезонный овощной",
+        },
+        price: 55,
+        image: "1786845049400-554344753.webp",
+      },
+      {
+        id: "p38",
+        name: {
+          tk: "Baklajan",
+          ru: "Баклажановый салат",
+        },
+        price: 35,
+        image: "1786841658653-480356959.webp",
+      },
+      {
+        id: "p39",
+        name: {
+          tk: "Dlya Druzey",
+          ru: "Для друзей",
+        },
+        price: 55,
+        image: "1786841667967-95993979.webp",
+      },
+      {
+        id: "p40",
+        name: {
+          tk: "Mužskoy",
+          ru: "Мужской",
         },
         price: 50,
-        image: "1785483468969-171557744-sm.webp",
+        image: "1786700435214-35246217.webp",
+      },
+      {
+        id: "p41",
+        name: {
+          tk: "Lýubimyý",
+          ru: "Любимый",
+        },
+        price: 50,
+        image: "1786841696731-263398779.webp",
+      },
+      {
+        id: "p42",
+        name: {
+          tk: "Týoplyý",
+          ru: "Теплый салат",
+        },
+        price: 55,
+        image: "1786841726985-27554465.webp",
+      },
+      {
+        id: "p43",
+        name: {
+          tk: "Tayskiy",
+          ru: "Тайский салат",
+        },
+        price: 50,
+        image: "1786700730506-598702483.webp",
+      },
+      {
+        id: "p44",
+        name: {
+          tk: "Kitayskiy (çin)",
+          ru: "Китайский (чин)",
+        },
+        price: 50,
+        image: "1786841782911-684703113.webp",
+      },
+      {
+        id: "p45",
+        name: {
+          tk: "Selyotka pod şuboy",
+          ru: "Селедка под шубой",
+        },
+        price: 55,
+        image: "1786842669074-761938573.webp",
+      },
+      {
+        id: "p46",
+        name: {
+          tk: "Nežnyý",
+          ru: "Нежный салат",
+        },
+        price: 55,
+        image: "1786842680411-990836984.webp",
+      },
+      {
+        id: "p47",
+        name: {
+          tk: "Ostryý",
+          ru: "Острый",
+        },
+        price: 50,
+        image: "1786842689412-884877842.webp",
+      },
+      {
+        id: "p48",
+        name: {
+          tk: "Dymok",
+          ru: "Дымок",
+        },
+        price: 55,
+        image: "1786700633799-783889217.webp",
+      },
+      {
+        id: "p49",
+        name: {
+          tk: "Duzly Gök Önümleri",
+          ru: "Соленое ассорти",
+        },
+        price: 55,
+        image: "1786845060735-254130138.webp",
+      },
+      {
+        id: "p50",
+        name: {
+          tk: "Miwe",
+          ru: "Фруктовое ассорти",
+        },
+        price: 75,
+        image: "1786700543555-547273171.webp",
       },
     ],
   },
   {
-    id: "pasta-side-dishes",
+    id: "pastries",
     name: {
-      tk: "Pasta we garnirler",
-      ru: "Паста и гарниры",
-    },
-    image: "sagaetti-balonez-sapagetti.webp",
-    items: [
-      {
-        id: "p6921",
-        name: {
-          tk: "Tüwi",
-          ru: "Рис",
-        },
-        price: 25,
-        image: "1785483480426-343966312-sm.webp",
-      },
-      {
-        id: "p6922",
-        name: {
-          tk: "Grečka",
-          ru: "Гречка",
-        },
-        price: 25,
-        image: "1785483493397-928642838-sm.webp",
-      },
-      {
-        id: "p6923",
-        name: {
-          tk: "Kartoşka pýuresi",
-          ru: "Картофельное пюре",
-        },
-        price: 40,
-        image: "1785483533970-700813061-sm.webp",
-      },
-      {
-        id: "p6924",
-        name: {
-          tk: "Fri kartoşka",
-          ru: "Картофель фри",
-        },
-        price: 40,
-        image: "hamburger-nageccy-bilen-free.webp",
-      },
-      {
-        id: "p6925",
-        name: {
-          tk: "Öý usulynda kömelekli kartoşka",
-          ru: "Картофель по-домашнему с грибами",
-        },
-        price: 50,
-        image: "1785483547787-978087121-sm.webp",
-      },
-      {
-        id: "p6926",
-        name: {
-          tk: "Pesto sously spagetti",
-          ru: "Спагетти с соусом песто",
-        },
-        price: 70,
-        image: "1785483512403-308016983-sm.webp",
-      },
-      {
-        id: "p6927",
-        name: {
-          tk: "Spagetti bolonez",
-          ru: "Спагетти болоньезе",
-        },
-        price: 70,
-        image: "sagaetti-balonez-sapagetti.webp",
-      },
-      {
-        id: "p6928",
-        name: {
-          tk: "Fettuçino Alfredo",
-          ru: "Феттуччине Альфредо",
-        },
-        price: 70,
-        image: "sagaetti-towukly-fettucino.webp",
-      },
-    ],
-  },
-  {
-    id: "pastry-dough-dishes",
-    name: {
-      tk: "Un önümleri",
+      tk: "Hamyrly Naharlar",
       ru: "Мучные изделия",
     },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p6930",
+        id: "p51",
+        name: {
+          tk: "Pizza kiçi",
+          ru: "Пицца маленькая",
+        },
+        price: 55,
+        image: "1786703234941-933478142.webp",
+      },
+      {
+        id: "p52",
+        name: {
+          tk: "Pizza Pepperoni",
+          ru: "Пицца пепперони",
+        },
+        price: 55,
+        image: "1786845077515-548964399.webp",
+      },
+      {
+        id: "p53",
+        name: {
+          tk: "Pizza Towukly",
+          ru: "Пицца с курицей",
+        },
+        price: 55,
+        image: "1786842861370-445896100.webp",
+      },
+      {
+        id: "p54",
+        name: {
+          tk: "Pizza Etli",
+          ru: "Пицца с мясом",
+        },
+        price: 55,
+        image: "1786842825414-109882814.webp",
+      },
+      {
+        id: "p55",
+        name: {
+          tk: "Pizza \"Margarita\"",
+          ru: "Пицца \"Маргарита\"",
+        },
+        price: 55,
+        image: "1786842895215-339918251.webp",
+      },
+      {
+        id: "p56",
+        name: {
+          tk: "Gök Önümli Pizza",
+          ru: "Оващная пицца",
+        },
+        price: 55,
+        image: "1786842905193-608118778.webp",
+      },
+      {
+        id: "p57",
+        name: {
+          tk: "İşlekli kiçi",
+          ru: "Ишлекли маленький",
+        },
+        price: 55,
+        image: "1786842920133-540633590.webp",
+      },
+      {
+        id: "p58",
+        name: {
+          tk: "Pide kiçi",
+          ru: "Пиде маленькая",
+        },
+        price: 55,
+        image: "1786842929390-108692027.webp",
+      },
+      {
+        id: "p59",
+        name: {
+          tk: "Lahmajun etli",
+          ru: "Лахмаджун с мясом",
+        },
+        price: 35,
+        image: "1786697334186-942718303.webp",
+      },
+      {
+        id: "p60",
+        name: {
+          tk: "Lezgin Pirog ýer almaly",
+          ru: "Лезгинский пирог с картофелем",
+        },
+        price: 55,
+        image: "1786696845387-828675382.webp",
+      },
+      {
+        id: "p61",
+        name: {
+          tk: "Gutap üwelen",
+          ru: "Гутап с фаршем",
+        },
+        price: 35,
+        image: "1786697392219-225970040.webp",
+      },
+      {
+        id: "p62",
+        name: {
+          tk: "Yumurtga Börek ýer almaly",
+          ru: "Вареники с яйцом",
+        },
+        price: 45,
+        image: "1786842946793-752233826.webp",
+      },
+      {
+        id: "p63",
+        name: {
+          tk: "Piroşki etli",
+          ru: "Пирожки с мясом",
+        },
+        price: 0,
+        image: "1786701784959-723853494.webp",
+      },
+      {
+        id: "p64",
         name: {
           tk: "Somsa",
           ru: "Сомса",
         },
-        price: 10,
-        image: "1785483571904-239900108-sm.webp",
+        price: 11,
+        image: "1786842974100-962945842.webp",
       },
       {
-        id: "p6931",
+        id: "p65",
         name: {
           tk: "Fitçi",
           ru: "Фитчи",
         },
-        price: 15,
-        image: "1785483580451-40061432-sm.webp",
+        price: 11,
+        image: "1786843002293-403053737.webp",
       },
+    ],
+  },
+  {
+    id: "doners",
+    name: {
+      tk: "Dönerler",
+      ru: "Донеры",
+    },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
+    items: [
       {
-        id: "p6932",
+        id: "p66",
         name: {
-          tk: "Çeburek",
-          ru: "Чебуреки",
+          tk: "Sada Blinçik",
+          ru: "Обычный блинчик",
         },
-        price: 10,
-        image: "1785483594950-898513223-sm.webp",
+        price: 15,
+        image: "1786843012149-619865858.webp",
       },
       {
-        id: "p6934",
+        id: "p67",
         name: {
-          tk: "Farşly manty",
-          ru: "Манты с фаршем",
+          tk: "Blinçik Syrly, Etli",
+          ru: "Блинчик с сыром",
+        },
+        price: 35,
+        image: "1786843024879-440986906.webp",
+      },
+      {
+        id: "p68",
+        name: {
+          tk: "Muçnoy",
+          ru: "Мучной",
         },
         price: 55,
-        image: "1785483607074-405839634-sm.webp",
+        image: "1786696932603-389519463.webp",
       },
       {
-        id: "p6935",
+        id: "p69",
         name: {
-          tk: "Dogralan etli manty",
-          ru: "Манты из нарезного мяса",
+          tk: "Döner Towukly",
+          ru: "Куриный донер",
         },
-        price: 65,
-        image: "1785483614616-318845622-sm.webp",
+        price: 35,
+        image: "1786843037400-483964379.webp",
       },
       {
-        id: "p6936",
+        id: "p70",
         name: {
-          tk: "Pelmeni",
-          ru: "Пельмени",
+          tk: "Döner Etli",
+          ru: "Мясной донер",
+        },
+        price: 35,
+        image: "1786843050377-461096829.webp",
+      },
+      {
+        id: "p71",
+        name: {
+          tk: "Döner Lawaşly etli",
+          ru: "Донер в лаваше с мясом",
+        },
+        price: 35,
+        image: "1786843069780-501480996.webp",
+      },
+      {
+        id: "p72",
+        name: {
+          tk: "Hot-Dog",
+          ru: "Хот-дог",
+        },
+        price: 20,
+        image: "1786701523847-895007510.webp",
+      },
+      {
+        id: "p73",
+        name: {
+          tk: "Çizburger",
+          ru: "Чизбургер",
         },
         price: 50,
-        image: "1785483640034-960832724-sm.webp",
+        image: "1786701501318-943454227.webp",
       },
       {
-        id: "p6937",
+        id: "p74",
         name: {
-          tk: "Kesadilýa",
-          ru: "Кесадилья",
-        },
-        price: 60,
-        image: "1785483648434-731914400-sm.webp",
-      },
-      {
-        id: "p6938",
-        name: {
-          tk: "Assorti pirog",
-          ru: "Пирог ассорти",
-        },
-        price: 90,
-        image: "1785483655815-549085822-sm.webp",
-      },
-      {
-        id: "p6939",
-        name: {
-          tk: "Farşly pirog",
-          ru: "Пирог с фаршем",
-        },
-        price: 70,
-        image: "1785483695175-823610238-sm.webp",
-      },
-      {
-        id: "p6940",
-        name: {
-          tk: "Lezgin pirogy",
-          ru: "Пирог лезгинский",
-        },
-        price: 80,
-        image: "1785483685686-918782823-sm.webp",
-      },
-      {
-        id: "p6941",
-        name: {
-          tk: "Dört pasyl pizza",
-          ru: "Пицца 4 сезона",
-        },
-        price: 80,
-        image: "1785483707239-372524563-sm.webp",
-      },
-      {
-        id: "p6942",
-        name: {
-          tk: "Assorti pizza",
-          ru: "Пицца ассорти",
-        },
-        price: 80,
-        image: "1785483797000-415902602-sm.webp",
-      },
-      {
-        id: "p6943",
-        name: {
-          tk: "Towukly pizza",
-          ru: "Пицца куриная",
-        },
-        price: 80,
-        image: "1785483823329-556678115-sm.webp",
-      },
-      {
-        id: "p6944",
-        name: {
-          tk: "Etli pizza",
-          ru: "Пицца мясная",
-        },
-        price: 80,
-        image: "1785483835774-235808592-sm.webp",
-      },
-      {
-        id: "p6945",
-        name: {
-          tk: "Kömelekli pizza",
-          ru: "Пицца грибная",
-        },
-        price: 80,
-        image: "1785483853150-205886067-sm.webp",
-      },
-      {
-        id: "p6946",
-        name: {
-          tk: "Pepperoni pizza",
-          ru: "Пицца пепперони",
-        },
-        price: 80,
-        image: "1785483868572-916713438-sm.webp",
-      },
-      {
-        id: "p6948",
-        name: {
-          tk: "Ak sously pizza",
-          ru: "Пицца на белом соусе",
-        },
-        price: 80,
-        image: "1785483889324-478767006-sm.webp",
-      },
-      {
-        id: "p6949",
-        name: {
-          tk: "Margarita pizza",
-          ru: "Пицца Маргарита",
-        },
-        price: 80,
-        image: "1785483900603-775102041-sm.webp",
-      },
-      {
-        id: "p6950",
-        name: {
-          tk: "Dogralan etli pide",
-          ru: "Пиде с нарезным мясом",
-        },
-        price: 65,
-        image: "1785483922904-8577618-sm.webp",
-      },
-      {
-        id: "p6951",
-        name: {
-          tk: "Garyşyk pide",
-          ru: "Пиде микс",
-        },
-        price: 65,
-        image: "1785483931455-497396319-sm.webp",
-      },
-      {
-        id: "p6952",
-        name: {
-          tk: "Garadeňiz pide",
-          ru: "Пиде Карадениз",
-        },
-        price: 65,
-        image: "1785483942364-294331217-sm.webp",
-      },
-      {
-        id: "p6953",
-        name: {
-          tk: "Lahmajun",
-          ru: "Лахмаджун",
+          tk: "Lüle Dolama",
+          ru: "Донер в лаваше с люля",
         },
         price: 40,
-        image: "1785483955602-260243650-sm.webp",
+        image: "1786843088854-411547497.webp",
       },
-    ],
-  },
-  {
-    id: "hot-meat-dishes",
-    name: {
-      tk: "Gyzgyn et tagamlary",
-      ru: "Горячие блюда из мяса",
-    },
-    image: "doner-palaw-doner-palaw1.webp",
-    items: [
       {
-        id: "p6956",
+        id: "p75",
         name: {
-          tk: "Şef aşpezden tagam",
-          ru: "Блюдо от шеф-повара",
+          tk: "Döner Tabakda",
+          ru: "Донер в тарелке",
         },
-        price: 150,
-        image: "1785483974895-306590277-sm.webp",
+        price: 55,
+        image: "1786843106586-654770881.webp",
       },
       {
-        id: "p6957",
+        id: "p76",
         name: {
-          tk: "Mesgeli kakmaç",
-          ru: "Какмач на сливочном масле",
-        },
-        price: 100,
-        image: "1785483983692-271175417-sm.webp",
-      },
-      {
-        id: "p6958",
-        name: {
-          tk: "Kakmaç batyrma",
-          ru: "Какмач батырма",
-        },
-        price: 100,
-        image: "1785484005183-651617818-sm.webp",
-      },
-      {
-        id: "p6959",
-        name: {
-          tk: "Fahitos",
-          ru: "Фахитос",
-        },
-        price: 90,
-        image: "1785484024711-550825795-sm.webp",
-      },
-      {
-        id: "p6960",
-        name: {
-          tk: "Befstroganow",
-          ru: "Бефстроганов",
-        },
-        price: 110,
-        image: "1785484035821-53680416-sm.webp",
-      },
-      {
-        id: "p6961",
-        name: {
-          tk: "Gorçisa sously et",
-          ru: "Мясо в горчичном соусе",
-        },
-        price: 110,
-        image: "1785484054716-414607073-sm.webp",
-      },
-      {
-        id: "p6962",
-        name: {
-          tk: "Fransuz usulynda et",
-          ru: "Мясо по-французски",
-        },
-        price: 120,
-        image: "1785484066098-287781587-sm.webp",
-      },
-      {
-        id: "p6963",
-        name: {
-          tk: "Hytaý usulynda et",
-          ru: "Мясо по-китайски",
-        },
-        price: 110,
-        image: "1785484081968-562053375-sm.webp",
-      },
-      {
-        id: "p6964",
-        name: {
-          tk: "Gowrulan bagyr",
-          ru: "Печень жареная",
-        },
-        price: 100,
-        image: "1785484091579-36175399-sm.webp",
-      },
-      {
-        id: "p6965",
-        name: {
-          tk: "Kömelekli goýun eti",
-          ru: "Баранина с грибами",
-        },
-        price: 90,
-        image: "1785484117191-289393600-sm.webp",
-      },
-      {
-        id: "p6966",
-        name: {
-          tk: "Goýun gapyrgasy",
-          ru: "Бараньи рёбрышки",
-        },
-        price: 120,
-        image: "1785484126628-186276107-sm.webp",
-      },
-      {
-        id: "p6967",
-        name: {
-          tk: "Goýun injigi",
-          ru: "Бараньи голени",
-        },
-        price: 110,
-        image: "1785484141366-112482507-sm.webp",
-      },
-      {
-        id: "p6969",
-        name: {
-          tk: "Nagetsy",
-          ru: "Нагетсы",
-        },
-        price: 80,
-        image: "1785484169828-403224324-sm.webp",
-      },
-      {
-        id: "p6972",
-        name: {
-          tk: "Palow",
-          ru: "Палов",
+          tk: "Palow Üsti Döner",
+          ru: "Донер с рисом и овощами",
         },
         price: 50,
-        image: "1785484204817-917663649-sm.webp",
+        image: "1786701443460-105028117.webp",
       },
       {
-        id: "p6973",
+        id: "p77",
         name: {
-          tk: "Izmir köfte",
-          ru: "Измир кёфте",
+          tk: "Iskender Kebap",
+          ru: "Искендер кебап",
         },
-        price: 100,
-        image: "1785484216835-883821770-sm.webp",
-      },
-      {
-        id: "p6974",
-        name: {
-          tk: "Jyz-jyz köfte",
-          ru: "Джыз-джыз кёфте",
-        },
-        price: 100,
-        image: "1785484236312-856315596-sm.webp",
+        price: 65,
+        image: "1786701454351-597953299.webp",
       },
     ],
   },
   {
-    id: "hot-fish-dishes",
+    id: "turkmen-turkish",
     name: {
-      tk: "Gyzgyn balyk tagamlary",
-      ru: "Горячие блюда из рыбы",
+      tk: "Türkmen-Türk Naharlar",
+      ru: "Туркмено-турецкие блюда",
     },
-    image: "steak-syomga-gyzyl-balyk.webp",
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p6980",
+        id: "p78",
         name: {
-          tk: "Gowrulan kefal",
-          ru: "Кефаль жареная",
+          tk: "Türkmen Palow towukly",
+          ru: "Туркменский плов с курицей",
         },
-        price: 0,
-        image: "1785484283570-654874635-sm.webp",
+        price: 35,
+        image: "1786696845387-828675382.webp",
       },
       {
-        id: "p6981",
+        id: "p79",
         name: {
-          tk: "Folgada bişirilen kefal",
-          ru: "Кефаль запечённая в фольге",
+          tk: "Spagetti Bolonez",
+          ru: "Спагетти болоньезе",
         },
-        price: 0,
-        image: "1785484292024-457393231-sm.webp",
+        price: 45,
+        image: "1786702184983-869447990.webp",
       },
       {
-        id: "p6982",
+        id: "p80",
         name: {
-          tk: "Gowrulan sudak",
-          ru: "Судак жареный",
+          tk: "Fetuçini Alfredo",
+          ru: "Фетучинни альфредо",
         },
-        price: 0,
-        image: "1785484304602-735804788-sm.webp",
+        price: 45,
+        image: "1786702280605-356521480.webp",
       },
       {
-        id: "p6983",
+        id: "p81",
         name: {
-          tk: "Folgada bişirilen sudak",
-          ru: "Судак запечённый в фольге",
+          tk: "Manty üwelen",
+          ru: "Манты с фаршем",
         },
-        price: 0,
-        image: "1785484314132-956176690-sm.webp",
+        price: 35,
+        image: "1786697397660-625526128.webp",
       },
       {
-        id: "p6984",
+        id: "p82",
         name: {
-          tk: "Gowrulan bekre",
+          tk: "Türk Manty",
+          ru: "Турецкие манты",
+        },
+        price: 35,
+        image: "1786702251562-335967679.webp",
+      },
+      {
+        id: "p83",
+        name: {
+          tk: "Makluba",
+          ru: "Маклуба",
+        },
+        price: 305,
+        image: "1786702223979-295321528.webp",
+      },
+      {
+        id: "p84",
+        name: {
+          tk: "Kotlet Syrly",
+          ru: "Котлеты с сыром",
+        },
+        price: 65,
+        image: "1786843116559-457277780.webp",
+      },
+      {
+        id: "p85",
+        name: {
+          tk: "Ýaprak Sarma",
+          ru: "Долма с виноградных листьев",
+        },
+        price: 45,
+        image: "1786701049687-188214921.webp",
+      },
+      {
+        id: "p86",
+        name: {
+          tk: "Karni Ýaryk",
+          ru: "Фаршированные баклажаны",
+        },
+        price: 65,
+        image: "1786843125584-126687319.webp",
+      },
+      {
+        id: "p87",
+        name: {
+          tk: "Gowyžat Ýazyk Pod Sousom Izmir",
+          ru: "Говяжий язык под соусом измир",
+        },
+        price: 55,
+        image: "1786845112952-292178159.webp",
+      },
+      {
+        id: "p88",
+        name: {
+          tk: "Hünkär Begendi",
+          ru: "Хункар бегенди",
+        },
+        price: 65,
+        image: "1786843182697-380854671.webp",
+      },
+      {
+        id: "p89",
+        name: {
+          tk: "Çiz Biz Kofte",
+          ru: "Турецкие котлеты",
+        },
+        price: 50,
+        image: "1786843194976-373593762.webp",
+      },
+    ],
+  },
+  {
+    id: "meat",
+    name: {
+      tk: "Etli Naharlar",
+      ru: "Блюда из мяса",
+    },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
+    items: [
+      {
+        id: "p90",
+        name: {
+          tk: "Güweç",
+          ru: "Мясо тушеное с овощами под сыром",
+        },
+        price: 75,
+        image: "1786700962999-943143155.webp",
+      },
+      {
+        id: "p91",
+        name: {
+          tk: "Saç Gowurma",
+          ru: "Жаркое из говядины",
+        },
+        price: 65,
+        image: "1786843207208-351207422.webp",
+      },
+      {
+        id: "p92",
+        name: {
+          tk: "Beef Stroganoff",
+          ru: "Бефстроганов",
+        },
+        price: 75,
+        image: "1786700972892-684505257.webp",
+      },
+      {
+        id: "p93",
+        name: {
+          tk: "Kakmaç Batyrma",
+          ru: "Какмач",
+        },
+        price: 65,
+        image: "1786700940504-980534465.webp",
+      },
+      {
+        id: "p94",
+        name: {
+          tk: "Et Sote",
+          ru: "Мясное соте",
+        },
+        price: 75,
+        image: "1786701058282-476281290.webp",
+      },
+      {
+        id: "p95",
+        name: {
+          tk: "Et Çopan Gowurma",
+          ru: "Жареное мясо с овощами",
+        },
+        price: 65,
+        image: "1786700998166-692344537.webp",
+      },
+      {
+        id: "p96",
+        name: {
+          tk: "Steak Lokum Beef",
+          ru: "Стейк локум биф",
+        },
+        price: 155,
+        image: "1786843369990-113411506.webp",
+      },
+      {
+        id: "p97",
+        name: {
+          tk: "New York Steak",
+          ru: "Стейк нью-йорк",
+        },
+        price: 155,
+        image: "1786700802124-52402007.webp",
+      },
+      {
+        id: "p98",
+        name: {
+          tk: "Steak T-Bone",
+          ru: "Стейк т-боне",
+        },
+        price: 155,
+        image: "1786843384662-587230199.webp",
+      },
+      {
+        id: "p99",
+        name: {
+          tk: "Steak Antrikot",
+          ru: "Стейк антрикот",
+        },
+        price: 155,
+        image: "1786843417586-453473088.webp",
+      },
+    ],
+  },
+  {
+    id: "fish",
+    name: {
+      tk: "Balykly Naharlar",
+      ru: "Блюда из рыбы",
+    },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
+    items: [
+      {
+        id: "p100",
+        name: {
+          tk: "Hamsi Tawa Doka",
+          ru: "Донер с жареной килькой",
+        },
+        price: 45,
+        image: "1786843428479-433675564.webp",
+      },
+      {
+        id: "p101",
+        name: {
+          tk: "Kefal Tawa",
+          ru: "Кефаль жареный",
+        },
+        price: 65,
+        image: "1786701122177-821701126.webp",
+      },
+      {
+        id: "p102",
+        name: {
+          tk: "Kefal Bitin",
+          ru: "Кефаль жареный целиком",
+        },
+        price: 65,
+        image: "1786701104386-565236730.webp",
+      },
+      {
+        id: "p103",
+        name: {
+          tk: "Kefir Tawa",
+          ru: "Сазан жареный",
+        },
+        price: 0,
+        image: "1786843438670-183230246.webp",
+      },
+      {
+        id: "p104",
+        name: {
+          tk: "Sudak Tawa",
+          ru: "Судак жареный целиком",
+        },
+        price: 0,
+        image: "1786701154242-614507472.webp",
+      },
+      {
+        id: "p105",
+        name: {
+          tk: "Bekre Bitin",
+          ru: "Осетрина жареная целиком",
+        },
+        price: 0,
+        image: "1786843448536-248912513.webp",
+      },
+      {
+        id: "p106",
+        name: {
+          tk: "Bekre Tawa",
           ru: "Осетрина жареная",
         },
         price: 0,
-        image: "1785484325390-867029476-sm.webp",
+        image: "1786843481749-199845596.webp",
       },
       {
-        id: "p6985",
+        id: "p107",
         name: {
-          tk: "Fransuz usulynda bekre",
-          ru: "Осетрина по-французски",
+          tk: "Balyk Görnüşleri Podnos",
+          ru: "Рыба жаренная ассорти поднос",
         },
         price: 0,
-        image: "1785484334354-687374686-sm.webp",
+        image: "1786701217660-332713168.webp",
       },
       {
-        id: "p6986",
+        id: "p108",
         name: {
-          tk: "Mangalda kefal",
-          ru: "Кефаль на мангале",
+          tk: "Kefal Podnos",
+          ru: "Кефаль поднос",
         },
         price: 0,
-        image: "1785484344992-524215540-sm.webp",
-      },
-      {
-        id: "p6987",
-        name: {
-          tk: "Mangalda bekre",
-          ru: "Осетрина на мангале",
-        },
-        price: 0,
-        image: "1785484354640-636044474-sm.webp",
-      },
-      {
-        id: "p6988",
-        name: {
-          tk: "Kefal",
-          ru: "Кефаль",
-        },
-        price: 0,
-        image: "1785484369090-892203566-sm.webp",
+        image: "1786845133216-381065895.webp",
       },
     ],
   },
   {
-    id: "hot-chicken-dishes",
+    id: "chicken",
     name: {
-      tk: "Gyzgyn towuk tagamlary",
-      ru: "Горячие блюда из курицы",
+      tk: "Towuk Naharlar",
+      ru: "Блюда из курицы",
     },
-    image: "nagetsy-nagetsy1.webp",
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p6991",
+        id: "p109",
         name: {
-          tk: "Krekerli towuk filesi",
-          ru: "Куриное филе в крекерах",
+          tk: "Towuk Kakmaç",
+          ru: "Какмач куриный",
         },
-        price: 110,
-        image: "1785484387179-261175991-sm.webp",
+        price: 55,
+        image: "1786843535415-664467361.webp",
       },
       {
-        id: "p6992",
+        id: "p110",
         name: {
-          tk: "Kömelek kremli towuk döşi",
-          ru: "Куриная грудка под сливочно-грибным соусом",
-        },
-        price: 100,
-        image: "1785484400957-125323382-sm.webp",
-      },
-      {
-        id: "p6993",
-        name: {
-          tk: "Karri sously towuk döşi",
-          ru: "Куриная грудка в карри соусе",
-        },
-        price: 100,
-        image: "1785484409470-423177980-sm.webp",
-      },
-      {
-        id: "p6994",
-        name: {
-          tk: "Ysmanakly towuk döşi",
-          ru: "Куриная грудка со шпинатом",
-        },
-        price: 110,
-        image: "1785484421358-36481412-sm.webp",
-      },
-      {
-        id: "p6995",
-        name: {
-          tk: "Towuk sote",
+          tk: "Towuk Sote",
           ru: "Куриное соте",
         },
-        price: 80,
-        image: "1785484433574-645638238-sm.webp",
+        price: 50,
+        image: "1786702305989-711033605.webp",
       },
       {
-        id: "p6996",
+        id: "p111",
         name: {
-          tk: "Towuk çahohbili",
-          ru: "Курица чахохбили",
+          tk: "Jüyje Mesge",
+          ru: "Цыпленок в сливочном масле",
         },
-        price: 90,
-        image: "1785484447316-510115284-sm.webp",
+        price: 55,
+        image: "1786702315116-423386374.webp",
       },
       {
-        id: "p6997",
+        id: "p112",
         name: {
-          tk: "Towukly lazanýa",
-          ru: "Куриная лазанья",
+          tk: "Towuk File Izgara",
+          ru: "Куриное филе на гриле",
         },
-        price: 80,
-        image: "1785484463726-368887722-sm.webp",
+        price: 55,
+        image: "1786843556101-2082277.webp",
       },
       {
-        id: "p6998",
+        id: "p113",
         name: {
-          tk: "Fransuz usulynda towuk filesi",
-          ru: "Куриное филе по-французски",
-        },
-        price: 110,
-        image: "1785484476825-997804151-sm.webp",
-      },
-      {
-        id: "p6999",
-        name: {
-          tk: "Teriýaki sously towuk ganady",
-          ru: "Куриные крылышки в терияки соусе",
-        },
-        price: 90,
-        image: "1785484485805-546168556-sm.webp",
-      },
-      {
-        id: "p7000",
-        name: {
-          tk: "Kiýew kotleti",
-          ru: "Котлеты по-киевски",
-        },
-        price: 80,
-        image: "1785484514137-859910559-sm.webp",
-      },
-      {
-        id: "p7001",
-        name: {
-          tk: "Mesgeli jüýje",
-          ru: "Цыплёнок на сливочном масле",
-        },
-        price: 75,
-        image: "1785484522046-886289718-sm.webp",
-      },
-      {
-        id: "p7002",
-        name: {
-          tk: "Jüýje batyrma",
-          ru: "Цыплёнок батырма",
-        },
-        price: 75,
-        image: "1785484531113-895506844-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "steaks",
-    name: {
-      tk: "Steýkler",
-      ru: "Стейки",
-    },
-    image: "steak-t-bone-steik.webp",
-    items: [
-      {
-        id: "p7003",
-        name: {
-          tk: "T-bone steýk",
-          ru: "Стейк Т-бон",
-        },
-        price: 190,
-        image: "1785484540128-844385491-sm.webp",
-      },
-      {
-        id: "p7004",
-        name: {
-          tk: "Dallas steýk",
-          ru: "Стейк Даллас",
-        },
-        price: 175,
-        image: "1785484567236-625855486-sm.webp",
-      },
-      {
-        id: "p7005",
-        name: {
-          tk: "Nýu-Ýork steýk",
-          ru: "Стейк Нью-Йорк",
-        },
-        price: 175,
-        image: "1785484577308-223950635-sm.webp",
-      },
-      {
-        id: "p7006",
-        name: {
-          tk: "Medalýon steýk",
-          ru: "Стейк медальон",
-        },
-        price: 160,
-        image: "1785484591687-578026446-sm.webp",
-      },
-      {
-        id: "p7007",
-        name: {
-          tk: "Towuk döş steýki",
+          tk: "Pliç Izgara",
           ru: "Куриная грудка",
         },
-        price: 110,
-        image: "1785484600499-215878119-sm.webp",
+        price: 55,
+        image: "1786702710643-518219163.webp",
+      },
+      {
+        id: "p114",
+        name: {
+          tk: "Patişah Sefasi Towuk Ruýaly",
+          ru: "Курица «по королевски»",
+        },
+        price: 55,
+        image: "1786843567497-967993663.webp",
+      },
+      {
+        id: "p115",
+        name: {
+          tk: "Towuk Şnitsel",
+          ru: "Куриный шницель",
+        },
+        price: 55,
+        image: "1786702864385-500946062.webp",
+      },
+      {
+        id: "p116",
+        name: {
+          tk: "Kömelekli Kremly Towuk",
+          ru: "Курица с грибами под сливочным соусом",
+        },
+        price: 55,
+        image: "1786843575865-803005715.webp",
+      },
+      {
+        id: "p117",
+        name: {
+          tk: "Köri Sously Towuk",
+          ru: "Курица карри",
+        },
+        price: 55,
+        image: "1786702432428-251551153.webp",
+      },
+      {
+        id: "p118",
+        name: {
+          tk: "Ýogurtly Towuk",
+          ru: "Курица с йогуртом",
+        },
+        price: 55,
+        image: "1786702551162-88046142.webp",
+      },
+      {
+        id: "p119",
+        name: {
+          tk: "\"Sultan\"",
+          ru: "«Султан»",
+        },
+        price: 55,
+        image: "1786843586184-191755844.webp",
+      },
+      {
+        id: "p120",
+        name: {
+          tk: "Bitin Towuk Dykma",
+          ru: "Курица начиненная",
+        },
+        price: 105,
+        image: "1786845148629-477609200.webp",
       },
     ],
   },
   {
-    id: "turkish-dishes",
-    name: {
-      tk: "Türk tagamlary",
-      ru: "Турецкие блюда",
-    },
-    image: "doner-palaw-doner-palaw5.webp",
-    items: [
-      {
-        id: "p7008",
-        name: {
-          tk: "Adana kebap",
-          ru: "Адана кебап",
-        },
-        price: 65,
-        image: "1785484611524-381450505-sm.webp",
-      },
-      {
-        id: "p7009",
-        name: {
-          tk: "Ali Nazik kebap",
-          ru: "Али Назик кебап",
-        },
-        price: 80,
-        image: "1785484624541-585259507-sm.webp",
-      },
-      {
-        id: "p7010",
-        name: {
-          tk: "Beýti kebap",
-          ru: "Бейти кебап",
-        },
-        price: 75,
-        image: "1785484633721-457972200-sm.webp",
-      },
-      {
-        id: "p7011",
-        name: {
-          tk: "Badamjan kebap",
-          ru: "Баклажан кебап",
-        },
-        price: 65,
-        image: "1785484645675-967592578-sm.webp",
-      },
-      {
-        id: "p7012",
-        name: {
-          tk: "Iskender kebap",
-          ru: "Искендер кебап",
-        },
-        price: 70,
-        image: "1785484661877-358485351-sm.webp",
-      },
-      {
-        id: "p7014",
-        name: {
-          tk: "Guzy pirzola",
-          ru: "Кузу пирзола",
-        },
-        price: 80,
-        image: "1785484685789-146099001-sm.webp",
-      },
-      {
-        id: "p7016",
-        name: {
-          tk: "Yzgara köfte",
-          ru: "Изгара кёфте",
-        },
-        price: 65,
-        image: "1785484720736-148630908-sm.webp",
-      },
-      {
-        id: "p7017",
-        name: {
-          tk: "Kaşarly köfte",
-          ru: "Кашарлы кёфте",
-        },
-        price: 75,
-        image: "1785484731592-785329548-sm.webp",
-      },
-      {
-        id: "p7018",
-        name: {
-          tk: "Izmir köfte",
-          ru: "Измир кёфте",
-        },
-        price: 75,
-        image: "1785484746654-11178568-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "grill-skewers",
+    id: "shashlik",
     name: {
       tk: "Şaşlyklar",
       ru: "Шашлыки",
     },
-    image: "doner-palaw-doner-palaw3.webp",
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p8826",
+        id: "p121",
         name: {
-          tk: "Assorty mangal",
-          ru: "Ассорти на мангале",
+          tk: "Towuk Lüle",
+          ru: "Куриное люля",
         },
-        price: 600,
-        image: "1785484794125-391596544-sm.webp",
+        price: 25,
+        image: "1786702931235-101156300.webp",
       },
       {
-        id: "p8827",
+        id: "p122",
         name: {
-          tk: "Assorty mangal",
-          ru: "Ассорти на мангале",
+          tk: "Towuk Şaşlyk",
+          ru: "Куриный щашлык",
         },
-        price: 800,
-        image: "1785484800448-941123552-sm.webp",
+        price: 30,
+        image: "1786702945651-210438503.webp",
       },
       {
-        id: "p7020",
+        id: "p123",
         name: {
-          tk: "Sygyr etli lýulýa",
-          ru: "Люля говяжье",
+          tk: "Towuk Döş Fri",
+          ru: "Куриная грудка с фри",
         },
-        price: 50,
-        image: "1785484821002-850623108-sm.webp",
+        price: 55,
+        image: "1786702710643-518219163.webp",
       },
       {
-        id: "p7021",
+        id: "p124",
         name: {
-          tk: "Towuk lýulýa",
-          ru: "Люля куриный",
+          tk: "Towuk Ganat Fri (3 şt)",
+          ru: "Крылышки с фри",
         },
-        price: 50,
-        image: "1785484831590-558711755-sm.webp",
+        price: 55,
+        image: "1786702662453-4190306.webp",
       },
       {
-        id: "p7022",
+        id: "p125",
         name: {
-          tk: "Peýnirli sygyr kotleti",
-          ru: "Котлет говяжий с сыром",
+          tk: "Towuk Nožka Fri (3 şt)",
+          ru: "Куриные ножки с фри",
         },
-        price: 75,
-        image: "1785484847925-629518876-sm.webp",
+        price: 55,
+        image: "1786845190986-224292501.webp",
       },
       {
-        id: "p7023",
+        id: "p126",
         name: {
-          tk: "Peýnirli towuk kotleti",
-          ru: "Котлет куриный с сыром",
+          tk: "Towuk Budy",
+          ru: "Куриное бедро",
         },
-        price: 75,
-        image: "1785484862542-303344966-sm.webp",
+        price: 45,
+        image: "1786703045983-276135669.webp",
       },
       {
-        id: "p7024",
+        id: "p127",
         name: {
-          tk: "Goýun şaşlygy",
+          tk: "Et Lüle",
+          ru: "Люля говяжий",
+        },
+        price: 30,
+        image: "1786703064746-398405919.webp",
+      },
+      {
+        id: "p128",
+        name: {
+          tk: "Bagyr Dolama",
+          ru: "Печень",
+        },
+        price: 55,
+        image: "1786703076099-732310802.webp",
+      },
+      {
+        id: "p129",
+        name: {
+          tk: "Goýun Şaşlyk",
           ru: "Баранина",
         },
-        price: 65,
-        image: "1785484877300-557768837-sm.webp",
-      },
-      {
-        id: "p7026",
-        name: {
-          tk: "Ýagly bagyr",
-          ru: "Печень в жиру",
-        },
-        price: 70,
-        image: "1785484910386-68711542-sm.webp",
-      },
-      {
-        id: "p7027",
-        name: {
-          tk: "Sygyr şaşlygy",
-          ru: "Говядина",
-        },
         price: 75,
-        image: "1785484922816-470846166-sm.webp",
+        image: "1786703085887-647823669.webp",
       },
       {
-        id: "p7028",
+        id: "p130",
         name: {
-          tk: "Lakomka şaşlyk",
-          ru: "Лакомка",
+          tk: "Goýun Gapyrga",
+          ru: "Бараньи ребрышки",
         },
-        price: 75,
-        image: "1785484971414-985551288-sm.webp",
+        price: 85,
+        image: "1786703116224-158966391.webp",
       },
       {
-        id: "p7029",
+        id: "p131",
         name: {
-          tk: "Süňkli towuk şaşlygy",
-          ru: "Курица с косточкой",
+          tk: "Adana Kebap",
+          ru: "Турецкий люля-кебаб",
         },
-        price: 60,
-        image: "1785484994065-840575049-sm.webp",
+        price: 55,
+        image: "1786703122719-514826536.webp",
       },
       {
-        id: "p7030",
+        id: "p132",
         name: {
-          tk: "Towuk ganady",
-          ru: "Куриные крылышки",
-        },
-        price: 60,
-        image: "1785485002035-433461717-sm.webp",
-      },
-      {
-        id: "p7031",
-        name: {
-          tk: "Towuk tabaka",
-          ru: "Куриный табака",
-        },
-        price: 140,
-        image: "1785485023514-880673393-sm.webp",
-      },
-      {
-        id: "p7032",
-        name: {
-          tk: "Mangalda jüýje",
-          ru: "Цыплёнок на мангале",
-        },
-        price: 75,
-        image: "1785485037734-274342555-sm.webp",
-      },
-      {
-        id: "p7033",
-        name: {
-          tk: "Mangalda bedene",
-          ru: "Перепёлка на мангале",
-        },
-        price: 100,
-        image: "1785485049727-72630975-sm.webp",
-      },
-      {
-        id: "p7034",
-        name: {
-          tk: "Mangal assorti",
-          ru: "Ассорти на мангале",
-        },
-        price: 400,
-        image: "1785485067522-735674731-sm.webp",
-      },
-      {
-        id: "p7036",
-        name: {
-          tk: "Beýti sarma",
+          tk: "Beýti Sarma",
           ru: "Бейти сарма",
         },
-        price: 80,
-        image: "1785485082325-450149868-sm.webp",
+        price: 55,
+        image: "1786703130784-256459940.webp",
       },
       {
-        id: "p7038",
+        id: "p133",
         name: {
-          tk: "Goýun gapyrga",
-          ru: "Гойун гапурга",
+          tk: "Sebze Şiş",
+          ru: "Овощи на гриле",
         },
-        price: 120,
-        image: "1785485099028-552668113-sm.webp",
+        price: 45,
+        image: "1786843650236-366609814.webp",
       },
       {
-        id: "p7043",
+        id: "p134",
         name: {
-          tk: "Towuk döş",
-          ru: "Куриная грудка",
+          tk: "Padnos kiçi",
+          ru: "Поднос маленький",
         },
-        price: 80,
-        image: "steak-towuk-cop.webp",
+        price: 505,
+        image: null,
       },
     ],
   },
   {
-    id: "mocktails",
+    id: "sides",
     name: {
-      tk: "Alkogolsyz kokteýller",
-      ru: "Безалкогольные коктейли",
+      tk: "Garnirler",
+      ru: "Гарниры",
     },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p7046",
+        id: "p135",
         name: {
-          tk: "Klassiki limonad",
-          ru: "Классический лимонад",
+          tk: "Türk Palow",
+          ru: "Рис по-турецки",
         },
-        price: 55,
-        image: "1785485121708-717613655-sm.webp",
+        price: 30,
+        image: "1786702142950-984458642.webp",
       },
       {
-        id: "p7047",
+        id: "p136",
         name: {
-          tk: "Ýer tudanaly limonad",
-          ru: "Клубничный лимонад",
+          tk: "Sada Pyure",
+          ru: "Пюре простой",
         },
-        price: 55,
-        image: "1785485132180-628099989-sm.webp",
+        price: 25,
+        image: "1786843696405-561801125.webp",
       },
       {
-        id: "p7048",
+        id: "p137",
         name: {
-          tk: "Sitrus limonady",
-          ru: "Цитрусовый лимонад",
+          tk: "Fri",
+          ru: "Фри",
         },
-        price: 55,
-        image: "1785485142531-770897374-sm.webp",
+        price: 30,
+        image: "1786697585150-405807949.webp",
       },
       {
-        id: "p7049",
+        id: "p138",
         name: {
-          tk: "Gök lagun mohito",
-          ru: "Мохито Голубая лагуна",
+          tk: "Kfc Fri",
+          ru: "Кфс фри",
         },
-        price: 55,
-        image: "1785485150751-698266196-sm.webp",
+        price: 35,
+        image: "1786697596583-311707595.webp",
       },
       {
-        id: "p7050",
+        id: "p139",
         name: {
-          tk: "Klassiki mohito",
-          ru: "Мохито классический",
+          tk: "Pyure Kotlet",
+          ru: "Пюре с котлетой",
         },
-        price: 45,
-        image: "1785485160214-461769757-sm.webp",
+        price: 40,
+        image: "1786697632722-45771851.webp",
       },
       {
-        id: "p7051",
+        id: "p140",
         name: {
-          tk: "Kiwili mohito",
-          ru: "Мохито киви",
+          tk: "Kömelekli Ýer Alma",
+          ru: "Жаренная картошка с грибами",
         },
-        price: 45,
-        image: "1785485171213-517817409-sm.webp",
+        price: 40,
+        image: "1786697649639-164654238.webp",
       },
       {
-        id: "p7052",
+        id: "p141",
         name: {
-          tk: "Miweli mohito",
-          ru: "Мохито ягодный",
+          tk: "Greçka",
+          ru: "Гречка",
         },
-        price: 45,
-        image: "1785485181074-879314566-sm.webp",
+        price: 25,
+        image: "1786702071794-273210824.webp",
       },
       {
-        id: "p7053",
+        id: "p142",
         name: {
-          tk: "Energetik mohito",
-          ru: "Мохито энергетический",
-        },
-        price: 50,
-        image: "1785485192378-474240889-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "milkshakes",
-    name: {
-      tk: "Süýtli kokteýller",
-      ru: "Молочные коктейли",
-    },
-    image: "kokteyl-kokteyl1.webp",
-    items: [
-      {
-        id: "p7054",
-        name: {
-          tk: "Oreo kokteýli",
-          ru: "Молочный коктейль Oreo",
-        },
-        price: 60,
-        image: "1785485201843-117093268-sm.webp",
-      },
-      {
-        id: "p7055",
-        name: {
-          tk: "Snickers kokteýli",
-          ru: "Сникерс",
+          tk: "Gowurma Ýer Alma",
+          ru: "Картошка с мясом",
         },
         price: 65,
-        image: "1785485212323-798593652-sm.webp",
+        image: "1786697661510-860534339.webp",
       },
       {
-        id: "p7056",
+        id: "p143",
         name: {
-          tk: "Rafaello kokteýli",
-          ru: "Рафаэлло",
+          tk: "Naggetsy",
+          ru: "Наггетсы",
         },
-        price: 55,
-        image: "1785485221704-294612592-sm.webp",
+        price: 35,
+        image: "1786845227610-445125432.webp",
       },
+    ],
+  },
+  {
+    id: "cocktails",
+    name: {
+      tk: "Kokteýl",
+      ru: "Коктейли",
+    },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
+    items: [
       {
-        id: "p7057",
+        id: "p144",
         name: {
-          tk: "Şokoladly kokteýl",
-          ru: "Шоколадный",
+          tk: "Классический лимонад",
+          ru: "Классический лимонад",
         },
-        price: 50,
-        image: "1785485230015-604440-sm.webp",
+        price: 35,
+        image: "1786704323325-706226360.webp",
       },
       {
-        id: "p7058",
+        id: "p145",
         name: {
-          tk: "Karamelli kokteýl",
+          tk: "Ягодный лимонад",
+          ru: "Ягодный лимонад",
+        },
+        price: 35,
+        image: "1786843793271-187946760.webp",
+      },
+      {
+        id: "p146",
+        name: {
+          tk: "Ситрусовый лимонад",
+          ru: "Ситрусовый лимонад",
+        },
+        price: 35,
+        image: "1786843807481-144658713.webp",
+      },
+      {
+        id: "p147",
+        name: {
+          tk: "Мохито",
+          ru: "Мохито",
+        },
+        price: 30,
+        image: "1786843820464-141818053.webp",
+      },
+      {
+        id: "p148",
+        name: {
+          tk: "Мохито ягодный",
+          ru: "Мохито ягодный",
+        },
+        price: 35,
+        image: "1786843829157-728920194.webp",
+      },
+      {
+        id: "p149",
+        name: {
+          tk: "Oreo",
+          ru: "Oreo",
+        },
+        price: 45,
+        image: "1786843837543-262812005.webp",
+      },
+      {
+        id: "p150",
+        name: {
+          tk: "Шоколадные",
+          ru: "Шоколадные",
+        },
+        price: 30,
+        image: "1786843898783-684402748.webp",
+      },
+      {
+        id: "p151",
+        name: {
+          tk: "Карамельный",
           ru: "Карамельный",
         },
-        price: 50,
-        image: "1785485238921-864456397-sm.webp",
+        price: 40,
+        image: "1786843907831-815257969.webp",
       },
       {
-        id: "p7059",
+        id: "p152",
         name: {
-          tk: "Ýer tudanaly kokteýl",
+          tk: "Клубничный",
           ru: "Клубничный",
         },
-        price: 50,
-        image: "1785485247136-691261491-sm.webp",
+        price: 35,
+        image: "1786843917711-379335970.webp",
       },
       {
-        id: "p7060",
+        id: "p153",
         name: {
-          tk: "Banan kokteýli",
+          tk: "Банановый",
           ru: "Банановый",
         },
-        price: 50,
-        image: "1785485254892-875522619-sm.webp",
-      },
-      {
-        id: "p7061",
-        name: {
-          tk: "Dondurma assorti",
-          ru: "Ассорти мороженое",
-        },
-        price: 50,
-        image: "1785485266204-433563501-sm.webp",
+        price: 35,
+        image: "1786843925982-894306848.webp",
       },
     ],
   },
   {
-    id: "smoothies",
+    id: "cold-drinks",
     name: {
-      tk: "Smuzi",
-      ru: "Смузи",
+      tk: "Sowuk icgiler",
+      ru: "Холодные напитки",
     },
+    // Yedekte kategori resmi yok; rozet resimsiz çizilir.
+    // The backup carries no category artwork, so the chip renders plain.
+    image: null,
     items: [
       {
-        id: "p7063",
+        id: "p12168",
         name: {
-          tk: "Banan we kiwi smuzi",
-          ru: "Банан и киви",
+          tk: "Kola Cynar",
+          ru: "Кола Чынар",
         },
-        price: 60,
-        image: "1785485287274-810979456-sm.webp",
+        price: 10,
+        image: "1786844134065-97105978.webp",
       },
       {
-        id: "p7064",
+        id: "p12169",
         name: {
-          tk: "Ýer tudanaly smuzi",
-          ru: "Клубничный",
+          tk: "Gosa Cynar",
+          ru: "Гоша Чынар",
         },
-        price: 60,
-        image: "1785485296664-457607990-sm.webp",
+        price: 7,
+        image: "1786844134065-55480124.webp",
       },
       {
-        id: "p7065",
+        id: "p12170",
         name: {
-          tk: "Detoks smuzi",
-          ru: "Детокс",
+          tk: "Coca Cola 1l",
+          ru: "Кока-Кола 1 л",
         },
-        price: 60,
-        image: "1785485309252-774169431-sm.webp",
+        price: 20,
+        image: "1786844134065-922508404.webp",
       },
       {
-        id: "p7066",
+        id: "p12171",
         name: {
-          tk: "Miweli smuzi",
-          ru: "Фруктовый",
+          tk: "Pepsi 0.5 l",
+          ru: "Пепси 0,5 л",
         },
-        price: 60,
-        image: "1785485321334-480098174-sm.webp",
-      },
-    ],
-  },
-  {
-    id: "lemonade",
-    name: {
-      tk: "Limonad",
-      ru: "Лимонад",
-    },
-    image: "limonad-limonad1.webp",
-    items: [
-      {
-        id: "p7075",
-        name: {
-          tk: "Miweli limonad",
-          ru: "Ягодный",
-        },
-        price: 50,
-        image: "limonad-limonad1.webp",
+        price: 8,
+        image: "1786844134065-662492932.webp",
       },
       {
-        id: "p7076",
+        id: "p12172",
         name: {
-          tk: "Klassiki limonad",
-          ru: "Классический",
+          tk: "Arcalyk suw",
+          ru: "Вода Арчалык",
         },
-        price: 50,
-        image: "limonad-limonad2.webp",
+        price: 3,
+        image: "1786844134065-968035160.webp",
       },
       {
-        id: "p7077",
+        id: "p12173",
         name: {
-          tk: "Ýer tudanaly limonad",
-          ru: "Клубничный",
+          tk: "Lipton gok",
+          ru: "Липтон зелёный",
         },
-        price: 50,
-        image: "limonad-limonad3.webp",
+        price: 8,
+        image: "1786844134065-900766771.webp",
       },
       {
-        id: "p7078",
+        id: "p12174",
         name: {
-          tk: "Almaly limonad",
-          ru: "Яблочный",
+          tk: "Lipton Gara",
+          ru: "Липтон чёрный",
         },
-        price: 50,
-        image: "limonad-limonad4.webp",
+        price: 8,
+        image: "1786844134065-384265970.webp",
+      },
+      {
+        id: "p12175",
+        name: {
+          tk: "Coca cola 0.5l",
+          ru: "Кока-Кола 0,5 л",
+        },
+        price: 10,
+        image: "1786844134065-382784778.webp",
+      },
+      {
+        id: "p12176",
+        name: {
+          tk: "Powrize",
+          ru: "Повризе",
+        },
+        price: 5,
+        image: "1786844134065-830671356.webp",
+      },
+      {
+        id: "p12177",
+        name: {
+          tk: "Kola Cynar",
+          ru: "Кола Чынар",
+        },
+        price: 7,
+        image: "1786844134065-631334713.webp",
+      },
+      {
+        id: "p12178",
+        name: {
+          tk: "Sprite",
+          ru: "Спрайт",
+        },
+        price: 15,
+        image: "1786844134065-302063009.webp",
+      },
+      {
+        id: "p12179",
+        name: {
+          tk: "Ecil ulje",
+          ru: "Эчил Вишня",
+        },
+        price: 20,
+        image: "1786844134065-953788399.webp",
+      },
+      {
+        id: "p12180",
+        name: {
+          tk: "Ecil Pyrtykal",
+          ru: "Эчил Апельсин",
+        },
+        price: 20,
+        image: "1786844134065-333122479.webp",
+      },
+      {
+        id: "p12181",
+        name: {
+          tk: "Ecil Setdaly",
+          ru: "Эчил Персик",
+        },
+        price: 20,
+        image: "1786844134065-357859189.webp",
+      },
+      {
+        id: "p12182",
+        name: {
+          tk: "Ecil Alma",
+          ru: "Эчил Яблоко",
+        },
+        price: 20,
+        image: "1786844134065-243926901.webp",
+      },
+      {
+        id: "p12183",
+        name: {
+          tk: "Ecil Nar",
+          ru: "Эчил Гранат",
+        },
+        price: 20,
+        image: "1786844134065-212646758.webp",
+      },
+      {
+        id: "p12184",
+        name: {
+          tk: "7 Gun Alma",
+          ru: "7 Гюн Яблоко",
+        },
+        price: 15,
+        image: "1786844134065-907139639.webp",
+      },
+      {
+        id: "p12185",
+        name: {
+          tk: "7 Gun Ulje",
+          ru: "7 Гюн Вишня",
+        },
+        price: 15,
+        image: "1786844134065-672350812.webp",
+      },
+      {
+        id: "p12186",
+        name: {
+          tk: "7 Gun Pyrtykal",
+          ru: "7 Гюн Апельсин",
+        },
+        price: 15,
+        image: "1786844134065-424813781.webp",
+      },
+      {
+        id: "p12187",
+        name: {
+          tk: "7 Gun Setdaly",
+          ru: "7 Гюн Персик",
+        },
+        price: 15,
+        image: "1786844134065-873533774.webp",
+      },
+      {
+        id: "p12188",
+        name: {
+          tk: "7 Gun Tropik",
+          ru: "7 Гюн Тропик",
+        },
+        price: 15,
+        image: "1786844134065-507763250.webp",
       },
     ],
   },
