@@ -109,6 +109,11 @@ const T = {
     msgAddress: "Адрес",
     visitors: "посетителей",
     cartShort: "Корзина",
+    reviewBadge: "Подарок за отзыв",
+    reviewTitle: "Оставьте отзыв — получите подарок",
+    reviewText:
+      "Поделитесь впечатлениями о нас в Google и покажите свой отзыв сотруднику — подарок ваш!",
+    reviewBtn: "Оставить отзыв в Google",
   },
   tk: {
     tagline: "Onlaýn sargyt",
@@ -138,6 +143,11 @@ const T = {
     msgAddress: "Salgy",
     visitors: "myhman",
     cartShort: "Sebet",
+    reviewBadge: "Teswir üçin sowgat",
+    reviewTitle: "Teswir ýazyň — sowgat alyň",
+    reviewText:
+      "Biz barada pikiriňizi Google-da paýlaşyň we teswiriňizi işgärimize görkeziň — sowgat siziňki!",
+    reviewBtn: "Google-da teswir ýaz",
   },
 };
 
