@@ -162,25 +162,6 @@ Resimler "uploads/" klasöründen gelir. Images are served from uploads/.
    ========================================================================== */
 const MENU = [
   {
-    id: "breakfast",
-    name: {
-      tk: "Ertirlikler",
-      ru: "Завтраки",
-    },
-    image: null,
-    items: [
-      {
-        id: "p15",
-        name: {
-          tk: "Şa Ertirlik",
-          ru: "Şa завтрак",
-        },
-        price: 50,
-        image: "1786696913426-527212455.webp",
-      },
-    ],
-  },
-  {
     id: "salads",
     name: {
       tk: "Salatlar",
@@ -1213,6 +1194,15 @@ const MENU = [
      ------------------------------------------------------------------------ */
 
   // --- Ertklikler / Завтраки
+  // {
+  //   id: "p15",
+  //   name: {
+  //     tk: "Şa Ertirlik",
+  //     ru: "Şa завтрак",
+  //   },
+  //   price: 50,
+  //   image: "1786696913426-527212455.webp",
+  // },
   // {
   //   id: "p2",
   //   name: {
